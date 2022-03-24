@@ -1,7 +1,6 @@
 void main() {
   var deck = new Deck();
-  print(deck);
-  print(deck.deal(5));
+  deck.removeCard('Diamonds', 'Ace');
   print(deck);
 }
 
@@ -51,6 +50,10 @@ class Deck {
     cards = cards.sublist(handSize);
 
     return hand;
+  }
+
+  removeCard(String suit, String rank) {
+    cards.removeWhere((card) => card.suit == suit && card.rank == rank);
   }
 }
 
